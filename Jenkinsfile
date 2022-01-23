@@ -4,7 +4,7 @@ pipeline {
         stage('enforce-formatting') { 
             agent {
                 docker {
-                    image 'alpine/flake8:4.0.1'
+                    image 'alpine'
                     args '-v /tmp:/var/jenkins_home/workspace'
                 }
             }

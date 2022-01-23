@@ -12,8 +12,6 @@ pipeline {
                 sh 'flake8 sources/add2vals.py sources/calc.py' 
             }
         }
-    }
-    stages {
         stage('static-analysis') { 
             agent {
                 docker {

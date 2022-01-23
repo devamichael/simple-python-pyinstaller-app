@@ -13,4 +13,17 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('static-analysis') { 
+            agent {
+                docker {
+                    image 'localhost:5000/pylint'
+                    args '--entrypoint='
+                }
+            }
+            steps {
+                sh 'cd source && pylint sources/add2vals.py sources/calc.py' 
+            }
+        }
+    }
 }

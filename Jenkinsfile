@@ -4,12 +4,12 @@ pipeline {
         stage('enforce-formatting') { 
             agent {
                 docker {
-                    image 'alpine'
-                    args '-v /tmp:/var/jenkins_home/workspace'
+                    image 'alpine/flake8:4.0.1'
+                    args '--entrypoint='
                 }
             }
             steps {
-                sh 'whoami' 
+                sh 'flake8 sources/add2vals.py sources/calc.py' 
             }
         }
     }

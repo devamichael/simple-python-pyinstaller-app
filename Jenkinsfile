@@ -9,7 +9,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'flake8 --ignore=E302 sources/add2vals.py sources/calc.py' 
+                sh 'flake8 --ignore=E302,W503 sources/add2vals.py sources/calc.py' 
             }
         }
         stage('static-analysis') { 

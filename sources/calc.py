@@ -9,7 +9,6 @@ so in quotes (i.e. as a string).
 # If 'value' is not an integer, convert it to a float
 # and failing that, a string.
 def conv(value):
-    
     try:
         return int(value)
     except ValueError:
@@ -20,7 +19,6 @@ def conv(value):
 
 # The 'add2' function itself
 def add2(arg1, arg2):
-    
     # Convert 'arg1' and 'arg2' to their appropriate types
     arg1conv = conv(arg1)
     arg2conv = conv(arg2)

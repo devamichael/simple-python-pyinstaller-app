@@ -4,7 +4,7 @@ pipeline {
         stage('enforce-formatting') { 
             agent {
                 docker {
-                    image 'hello-world'
+                    image 'alpine/flake8:4.0.1'
                 }
             }
             steps {

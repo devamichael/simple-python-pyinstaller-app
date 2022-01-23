@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'alpine/flake8:4.0.1'
-                    args  '-v /var/jenkins_home/workspace/:/var/jenkins_home/workspace/'
+                    args  '--volumes-from da6dc95e2e7207f230436e8fc9e5f40bea7b6e04a62fcb88465424f71026bfb0'
                 }
             }
             steps {

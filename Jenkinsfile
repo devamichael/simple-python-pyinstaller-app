@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cd source && pylint sources/add2vals.py sources/calc.py' 
+                sh 'cd sources && pylint add2vals.py calc.py' 
             }
         }
     }

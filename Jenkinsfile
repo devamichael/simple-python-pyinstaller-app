@@ -3,15 +3,9 @@ pipeline {
     stages {
         stage('enforce-formatting') { 
             agent {
-                docker {
-                    image 'alpine/flake8:4.0.1'
-                    args '--entrypoint='
-                }
-            }
-            agent {
-    kubernetes {
-        label podlabel
-        yaml """
+                kubernetes {
+                    label podlabel
+                    yaml """
 kind: Pod
 spec:
   containers:
@@ -22,7 +16,7 @@ spec:
     tty: true
   restartPolicy: Never
 """
-   }
+            }
             steps {
                 sh 'flake8 --ignore=E302,W503 sources/add2vals.py sources/calc.py' 
             }

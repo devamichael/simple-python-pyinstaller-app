@@ -17,7 +17,7 @@ spec:
                 }
             }
             steps {
-                sh 'echo "hello world"' 
+                sh 'flake8 --ignore=E302 sources/add2vals.py sources/calc.py' 
             }
         }
     }

@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cd sources && pylint add2vals.py calc.py' 
+                sh 'cd sources && pylint --disable=C0103,C0116 add2vals.py calc.py' 
             }
         }
     }

@@ -17,7 +17,9 @@ spec:
                 }
             }
             steps {
-                sh 'flake8 --ignore=E302 sources/add2vals.py sources/calc.py' 
+                container('flake8') {
+                    sh 'flake8 --ignore=E302 sources/add2vals.py sources/calc.py' 
+                }
             }
         }
     }

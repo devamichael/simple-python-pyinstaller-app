@@ -15,7 +15,7 @@ pipeline {
         stage('static-analysis') { 
             agent {
                 docker {
-                    image 'localhost:5000/pylint'
+                    image 'pylint'
                     args '--entrypoint='
                 }
             }

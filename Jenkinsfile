@@ -8,10 +8,10 @@ pipeline {
 kind: Pod
 spec:
   containers:
-  - name: flak8
+  - name: flake8
     image: docker.io/alpine/flake8:4.0.1
     command:
-    - /busybox/cat
+    - cat
     tty: true
   restartPolicy: Never
 """

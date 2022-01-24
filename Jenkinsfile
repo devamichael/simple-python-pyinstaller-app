@@ -23,5 +23,16 @@ pipeline {
                 sh 'cd sources && pylint --disable=C0103,C0116 add2vals.py calc.py' 
             }
         }
+        stage('Build') { 
+            agent {
+                docker {
+                    image 'python:3-alpine' 
+                }
+            }
+            steps {
+                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
+                stash(name: 'compiled-results', includes: 'sources/*.py*') 
+            }
+        }
     }
 }

@@ -4,7 +4,6 @@ pipeline {
         stage('enforce-formatting') { 
             agent {
                 kubernetes {
-                    label podlabel
                     yaml """
 kind: Pod
 spec:
